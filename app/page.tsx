@@ -13,7 +13,7 @@ import { useMutation } from "convex/react";
 
 export default function Home() {
   // console.log(api);
-  // const createFile = useMutation(api);
+  const createFile = useMutation(api.files.createFile);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <SignedIn>
@@ -27,7 +27,13 @@ export default function Home() {
         </SignOutButton>
       </SignedOut>
 
-      <Button onClick={() => {}}>Click me</Button>
+      <Button
+        onClick={() => {
+          createFile("hello");
+        }}
+      >
+        Click me
+      </Button>
     </main>
   );
 }
